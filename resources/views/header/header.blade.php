@@ -47,8 +47,6 @@
                         <a href="{{ route('projets/sodexam') }}" class="dropdown-item">Projets</a>
                         <a href="{{ route('projets')}}" class="dropdown-item">Nos Equipes</a>
                         <a href="{{ route('liste/materiel')}}" class="dropdown-item">Listes de materiels</a>
-                        <!-- <a href="testimonial.html" class="dropdown-item">Testimonial</a> 
-                        <a href="404.html" class="dropdown-item">404 Page</a> -->
                     </div>
                 </div>
                 <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
