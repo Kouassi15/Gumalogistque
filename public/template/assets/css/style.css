@@ -1,4 +1,8 @@
 /********** Template CSS **********/
+#video-container {
+    max-width: 800px; /* Exemple de style CSS pour limiter la largeur du conteneur */
+    margin: 0 auto; /* Centrer le conteneur horizontalement */
+}
 
 .logo-images{
     width: 160px;

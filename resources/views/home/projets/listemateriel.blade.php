@@ -84,10 +84,10 @@
                 
                 <tr>
                     <th scope="row">7</th>
-                    <td>Lot d' echafaudages métaliques</td>
+                    <td>Lot d'echafaudages métaliques</td>
                     <td>1</td>
                     <td>
-                    <img src="{{asset('template/assets/img/lot-echafaudage.jpg')}}" style="width:60px; height:60px" alt="lot-echafaudage" class="img-fluid">
+                    <img src="{{asset('template/assets/img/Lot-echafaudage.jpg')}}" style="width:60px; height:60px" alt="lot-echafaudage" class="img-fluid">
                     </td>
                 </tr>
 

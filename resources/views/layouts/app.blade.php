@@ -30,7 +30,7 @@
     <!-- Template Stylesheet -->
     <link href="{{asset('template/assets/css/style.css')}}" rel="stylesheet">
 </head>
-   
+
     @include('header.header')
 
       @yield('content');

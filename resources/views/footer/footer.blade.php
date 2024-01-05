@@ -59,19 +59,22 @@
                     <a class="btn btn-link" href="{{ route('liste/materiel')}}">Listes matériels</a>
                 </div>
                 <div class="col-lg-3 col-md-6">
-                    <h5 class="text-white mb-4">Heures de travail</h5>
+                    <h5 class="text-white mb-4">Horaires de travail</h5>
                     <p class="mb-1">Lundi - Vendredi</p>
-                    <h6 class="text-light">08h00  - 18h00 </h6>
+                    <h6 class="text-light">08h30  - 17h30 </h6>
                     <p class="mb-1">Samedi</p>
-                    <h6 class="text-light">09h00  - 12h00 </h6>
+                    <h6 class="text-light">Fermer </h6>
                     <p class="mb-1">Dimanche</p>
                     <h6 class="text-light">Fermer</h6>
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Newsletter</h5>
                     <div class="position-relative w-100">
-                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Votre email">
-                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                        <form method="post" action="{{ route('utilisateur')}}">
+                        @csrf
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" name="email" placeholder="Votre email">
+                        <button type="submit" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">S'inscrire</button>
+                    </form>
                     </div>
                 </div>
             </div>

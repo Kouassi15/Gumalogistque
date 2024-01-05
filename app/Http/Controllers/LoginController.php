@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Utilisateur;
 
 class LoginController extends Controller
 {
@@ -34,7 +35,18 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            
+            'email' => 'required|max:255',
+        ]);
+
+
+        $utilisateur = new Utilisateur([
+            'email' => $request->get('email'),
+            
+        ]);
+          $utilisateur->save();
+        return back()->with('success', 'Message soumis avec succès!');
     }
 
     /**

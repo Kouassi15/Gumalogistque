@@ -59,7 +59,7 @@
             </div>
             <div class="row mb-5">
                 <div class="col-12 wow fadeInUp" data-wow-delay="0.1s">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15888.782245642135!2d-3.9997161!3d5.3871368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc195ae40c07299%3A0x8921c298194c0513!2sGUMA%20LOGISTIQUE!5e0!3m2!1sfr!2sci!4v1702489626410!5m2!1sfr!2sci" width="1100" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15888.782245642135!2d-3.9997161!3d5.3871368!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc195ae40c07299%3A0x8921c298194c0513!2sGUMA%20LOGISTIQUE!5e0!3m2!1sfr!2sci!4v1702489626410!5m2!1sfr!2sci" width="1300" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
                 </div>
             </div>

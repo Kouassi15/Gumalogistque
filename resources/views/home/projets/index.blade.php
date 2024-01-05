@@ -38,7 +38,7 @@
                             <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4" style="height: 90px;">
                                 <h5>GUETCHO TAKEDO MARTIAL</h5>
                                 <span class="text-primary">Directeur des travaux</span>
-                                <span class="text">Ingenieur 2iE Optin Genie Civil</span>
+                                <span class="text">Ingenieur 2iE Option Genie Civil</span>
                                 <div class="team-social">
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -58,7 +58,7 @@
                             <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4" style="height: 90px;">
                                 <h5>KANOUSSEUR BIEN NUNKAWOUN BRICE</h5>
                                 <span class="text-primary">Conducteur Travaux</span>
-                                <span class="text">Technicien Superieur(DTS) Optoin Bâtiment et Urbanisme</span>
+                                <span class="text">Technicien Supérieur Optoin Bâtiment et Urbanisme</span>
                                 <div class="team-social">
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>
@@ -75,10 +75,10 @@
                             <div class="flex-shrink-0 btn-square bg-primary" style="width: 90px; height: 90px;">
                                 <i class="fa fa-2x fa-share text-white"></i>
                             </div>
-                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-4" style="height: 90px;">
+                            <div class="position-relative overflow-hidden bg-light d-flex flex-column justify-content-center w-100 ps-3" style="height: 90px;">
                                 <h5>GUIGMA WENDAYAM LAZARE</h5>
-                                <span class="text-primary">Chef d'equipe</span>
-                                <span class="text">Technicien Supérier Option Genie Civil</span>
+                                <span class="text-primary">Chef d'équipe</span>
+                                <span class="text">Technicien Supérieur Option Génie Civil</span>
                                 <div class="team-social">
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-facebook-f"></i></a>
                                     <a class="btn btn-square btn-dark rounded-circle mx-1" href=""><i class="fab fa-twitter"></i></a>

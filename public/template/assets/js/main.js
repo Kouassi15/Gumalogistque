@@ -47,7 +47,7 @@
     });
     console.log($videoSrc);
     $('#videoModal').on('shown.bs.modal', function (e) {
-        $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
+        $("#video").attr('src', $videoSrc + "?pause=1&amp;modestbranding=1&amp;showinfo=0");
     })
     $('#videoModal').on('hide.bs.modal', function (e) {
         $("#video").attr('src', $videoSrc);
@@ -115,25 +115,25 @@
         }
     });
 
-    document.addEventListener("DOMContentLoaded", function() {
+    // document.addEventListener("DOMContentLoaded", function() {
         // Sélectionnez l'élément image
-        var animatedImage = document.getElementById('animatedImage');
+        // var animatedImage = document.getElementById('animatedImage');
       
         // Appellez la fonction pour démarrer l'animation
-        animateImage();
+        // animateImage();
       
         // Définissez la fonction pour animer l'image
-        function animateImage() {
+        // function animateImage() {
           // Déplacez l'image vers la droite
-          animatedImage.style.transform = 'translateX(50px)';
+        //   animatedImage.style.transform = 'translateX(50px)';
       
           // Utilisez requestAnimationFrame pour créer une boucle d'animation
-          requestAnimationFrame(function() {
+        //   requestAnimationFrame(function() {
             // Appel récursif de la fonction pour continuer l'animation
-            animateImage();
-          });
-        }
-      });
+    //         animateImage();
+    //       });
+    //     }
+    //   });
    
 })(jQuery);
 

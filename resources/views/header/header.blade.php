@@ -38,7 +38,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{route('accueil')}}" class="nav-item nav-link active">Accueil</a>
+                <a href="{{route('accueil')}}" class="nav-item nav-link">Accueil</a>
                 <a href="{{route('apropos')}}" class="nav-item nav-link">A Propos</a>
                 <a href="{{route('services')}}" class="nav-item nav-link">Nos Services</a>
                 <div class="nav-item dropdown">
@@ -51,7 +51,7 @@
                 </div>
                 <a href="{{route('contact')}}" class="nav-item nav-link">Contact</a>
             </div>
-            <a href="" class="btn btn-primary px-3 d-none d-lg-block">Obtenir un devis</a>
+            <a href="{{route('contact')}}" class="btn btn-primary px-3 d-none d-lg-block">Contactez-nous</a>
         </div>
     </nav>
     <!-- Navbar End -->
