@@ -65,7 +65,7 @@ class ProjectsController extends Controller
     public function show($id)
     {
         $projets = Project::findOrFail($id);
-        return view('dashboard.admin.projets.show', compact('projets'));
+        return view('.admin.projets.show', compact('projets'));
     }
 
     /**
@@ -92,7 +92,7 @@ class ProjectsController extends Controller
         // dd($request);
         $request->validate([
             'titles' => 'required',
-            'images_projects' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'images_projects' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
         ]);
 
         $projets = Project::findOrFail($id);

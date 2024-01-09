@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Models\Materiel;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class MaterielsController extends Controller
 {
@@ -14,7 +15,8 @@ class MaterielsController extends Controller
      */
     public function index()
     {
-        //
+        $materiels = Materiel::all();
+        return view('dashboard.admin.materiels.index',compact('materiels'));
     }
 
     /**
@@ -24,7 +26,7 @@ class MaterielsController extends Controller
      */
     public function create()
     {
-        return view('dashboard.admin.materiels.createmateriel');
+        return view('dashboard.admin.materiels.create');
     }
 
     /**
@@ -35,7 +37,23 @@ class MaterielsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+            'qte' => 'required',
+            'images_materiels' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+        ]);
+        
+        $materiels = new Materiel();
+        $materiels->nom = $request->input('nom');
+        $materiels->qte = $request->input('qte');
+        // Uplaoder une image 
+        $imageName = $request->file('images_materiels')->getClientOriginalName();
+        $path = $request->file('images_materiels')->move('public/assets/img', $imageName);
+        $materiels->images_materiels = $path;
+        
+        $materiels->save();
+        
+        return redirect('materiel/index')->with('succès', 'Un Materiel a été enregistré avec succès');
     }
 
     /**
@@ -46,7 +64,9 @@ class MaterielsController extends Controller
      */
     public function show($id)
     {
-        //
+        $materiels = Materiel::findOrFail($id);
+
+        return view('dashboard.admin.materiels.show',compact('materiels'));
     }
 
     /**
@@ -57,7 +77,9 @@ class MaterielsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $materiels = Materiel::findOrFail($id);
+
+        return view('dashboard.admin.materiels.edit',compact('materiels'));
     }
 
     /**
@@ -69,7 +91,23 @@ class MaterielsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nom' => 'required',
+            'qte' => 'required',
+            'images_materiels' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
+        ]);
+        
+        $materiels = Materiel::findOrFail($id);
+        $materiels->nom = $request->input('nom');
+        $materiels->qte = $request->input('qte');
+        // Uplaoder une image 
+        $imageName = $request->file('images_materiels')->getClientOriginalName();
+        $path = $request->file('images_materiels')->move('public/assets/img', $imageName);
+        $materiels->images_materiels = $path;
+        
+        $materiels->update();
+        
+        return redirect('materiel/index')->with('succès', 'Un Materiel a été enregistré avec succès');
     }
 
     /**
@@ -80,6 +118,10 @@ class MaterielsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $materiels = Materiel::findOrfail($id);
+        $materiels->delete();
+
+        return redirect('materiel/index')->with('succès', 'Un Materiel a été supprimé avec succès');
+
     }
 }

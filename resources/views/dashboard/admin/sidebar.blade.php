@@ -86,8 +86,8 @@
 		<div class="menu-block customscroll">
 			<div class="sidebar-menu">
 				<ul id="accordion-menu">
-					<li class="dropdown">
-						<a href="javascript:;" >
+					<li>
+						<a href="javascript:;" class="dropdown-toggle no-arrow">
 							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
 						</a>
 						<!-- <ul class="submenu">
@@ -119,7 +119,7 @@
 						</a>
 						<ul class="submenu">
 							<li><a href="{{route('materiel.create')}}">Ajouter</a></li>
-							<li><a href="ui-cards.html">Liste des materiels</a></li>
+							<li><a href="{{ route('materiel.index')}}">Liste des materiels</a></li>
 						</ul>
 					<!-- </li>
 					<li class="dropdown">

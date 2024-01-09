@@ -94,7 +94,7 @@ class ServicesController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'images_services' => 'required|image|mimes:jpg,png,jpeg|max:2048',
+            'images_services' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
         ]);
         
         $services = Service::findOrFail($id);

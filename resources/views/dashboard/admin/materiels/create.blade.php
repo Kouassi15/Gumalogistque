@@ -6,15 +6,16 @@
 <div class="container">
 	<div class="pb-20 card-box mb-30 ">
 		<div class="card-body justify-content-center d-flex">
-			<form method="POST" action="{{ route('dashboard.store') }}" enctype="multipart/form-data">
+			<form method="POST" action="{{ route('materiel.store') }}" enctype="multipart/form-data">
 			      @csrf
+				  <h2 class="text-primary">Ajouter un Materiel</h2><br>
 				<div class="form-group ">
 					<label>Nom</label>
 					<input class="form-control" type="text" name="nom" value="{{ old('nom') }}" placeholder="Entrer le nom du materiel">
 				</div>
                 <div class="form-group ">
 					<label>Quantitées</label>
-					<input class="form-control" type="text" name="qte" value="{{ old('qte') }}" placeholder="Entrer la quantitée">
+					<input class="form-control" type="number" name="qte" value="{{ old('qte') }}" placeholder="Entrer la quantitée">
 				</div>
 				<div class="form-group">
 					<label>Selectionner l'image</label>

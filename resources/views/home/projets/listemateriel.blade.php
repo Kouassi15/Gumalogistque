@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('home.layouts.app')
 @section('content')
 <!-- image -->
 <div class="carousel-inner h-50">

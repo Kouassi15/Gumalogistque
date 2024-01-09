@@ -34,11 +34,12 @@
                 <table class="data-table table stripe hover nowrap">
                        <tr>
                         <th>Titre</th>
-                        <td>{{ $services->title }}</td>
                         <th>Images</th>
-                        <td><img src="{{asset('/'.$services->images_services)}}" width="80px" alt="Service Image"></td>
                         </tr>
                         <tr>
+						<td>{{ $services->title }}</td>
+						<td><img src="{{asset('/'.$services->images_services)}}" width="80px" alt="Service Image"></td>
+                        </tr>
                     
                 </table>
         </div>

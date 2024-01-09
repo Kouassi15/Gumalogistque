@@ -8,6 +8,7 @@
 		<div class="card-body justify-content-center d-flex">
 			<form method="POST" action="{{ route('dashboard.store') }}" enctype="multipart/form-data">
 			      @csrf
+				  <h2 class="text-primary">Ajouter un Projet</h2><br>
 				<div class="form-group ">
 					<label>Titres</label>
 					<input class="form-control" type="text" name="titles" value="{{ old('titles') }}" placeholder="Entrer le titre">

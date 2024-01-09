@@ -89,7 +89,7 @@
         <tr>
             <td  class="table-plus">{{$index + 1}}</td>
             <td>{{$projet->titles}}</td>
-            <td><img src="{{asset('/'.$projet->images_projects)}}" width="80px" alt="Service Image"></td>
+            <td><img src="{{asset('/'.$projet->images_projects)}}" width="80px" alt="Project Image"></td>
             <td>
                 <form method="POST" action="{{ route('dashboard.deleteprojects',$projet->id) }}">
                     @csrf

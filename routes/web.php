@@ -43,6 +43,9 @@ Route::get('/liste/materiel',[MaterielController::class, 'create'])->name('liste
 Route::post('/contact/submit',[ContactController::class, 'store'])->name('contact/submit');
 
 // Dashboard
+//  Route::middleware(['auth'])->group(function () {
+//     Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
+// });
 Route::get('dashboard/index',[DashboardController::class,'index'])->name('dashboard.index');
 //services
 Route::get('dashboard/services',[ServicesController::class, 'create'])->name('dashboard.services');
@@ -66,8 +69,16 @@ Route::delete('dashboard/deleteprojects/{id}',[ProjectsController::class, 'destr
 
 //materiels
 Route::prefix('materiel')->name('materiel.')->group(function () {
-    // Route::get('/', 'index');
+    Route::get('index',[MaterielsController::class ,'index'])->name('index');
     Route::get('create',[MaterielsController::class, 'create'])->name('create');
+    Route::post('store',[MaterielsController::class, 'store'])->name('store');
+    Route::put('update/{id}',[MaterielsController::class, 'update'])->name('update');
+    Route::get('edit/{id}',[MaterielsController::class, 'edit'])->name('edit');
+    Route::get('show/{id}',[MaterielsController::class, 'show'])->name('show');
+    Route::delete('delete',[MaterielsController::class, 'destroy'])->name('delete');
 });
 //
 Route::post('/utilisateur',[LoginController::class,'store'])->name('utilisateur');
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

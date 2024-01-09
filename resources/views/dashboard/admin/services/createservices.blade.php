@@ -8,6 +8,7 @@
 		<div class="card-body justify-content-center d-flex">
 			<form method="POST" action="{{ route('dashboard.nosServices') }}" enctype="multipart/form-data">
 			      @csrf
+				  <h2 class="text-primary">Ajouter un Service</h2><br>
 				<div class="form-group ">
 					<label>Titre</label>
 					<input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Entrer le titre">

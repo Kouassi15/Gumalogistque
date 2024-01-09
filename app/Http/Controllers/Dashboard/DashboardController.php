@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
@@ -14,7 +15,12 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard.admin.sidebar');
+        if(Auth::user()){
+            return view('dashboard.layout.app');
+        }else{
+            return view('auth.login');
+        }
+        // return view('dashboard.admin.sidebar');
     }
 
     /**
@@ -24,7 +30,11 @@ class DashboardController extends Controller
      */
     public function create()
     {
-        //
+        // if(Auth::user()){
+        //     return view('dashboard.admin.sidebar');
+        // }else{
+        //     return view('auth.login');
+        // }
     }
 
     /**

@@ -50,7 +50,7 @@
 <div class="main-container">
 		<div class="pd-ltr-20 height-100-p xs-pd-20-10">
 @yield('content')
-<!-- @include('dashboard.admin.footer') -->
+@include('dashboard.admin.footer')
 
        </div>
 </div>
