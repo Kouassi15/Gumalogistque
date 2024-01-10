@@ -36,6 +36,7 @@
                        <tr>
                         <th class="table-plus datatable-nosort">N°</th>
                         <th>Titre</th>
+                        <th>Descriptions</th>
                         <th>Images</th>
                         <th class="datatable-nosort">Action</th>
                         </tr>
@@ -45,6 +46,7 @@
                    <tr>
                       <td class="table-plus">{{$index + 1}}</td>
                       <td>{{$service->title}}</td>
+                      <td>{{$service->description}}</td>
                       <td><img src="{{asset('/'.$service->images_services)}}" width="80px" alt="Service Image"></td>
                      <td>
                        <form method="POST" action="{{ route('dashboard.delete',$service->id)}}">

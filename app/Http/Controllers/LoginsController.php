@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Materiel;
 use Illuminate\Http\Request;
+use App\Models\Utilisateur;
 
-class MaterielController extends Controller
+class LoginsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +14,9 @@ class MaterielController extends Controller
      */
     public function index()
     {
-        $materiels = Materiel::get();
-        return view('home.projets.listemateriel', compact('materiels'));
+        //
     }
-     
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +24,7 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('home.projets.listemateriel');
+        //
     }
 
     /**
@@ -36,7 +35,18 @@ class MaterielController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            
+            'email' => 'required|max:255',
+        ]);
+
+
+        $utilisateur = new Utilisateur([
+            'email' => $request->get('email'),
+            
+        ]);
+          $utilisateur->save();
+        return back()->with('success', 'Message soumis avec succès!');
     }
 
     /**

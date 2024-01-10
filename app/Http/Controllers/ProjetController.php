@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Project;
 use Illuminate\Http\Request;
 
 class ProjetController extends Controller
@@ -26,6 +27,10 @@ class ProjetController extends Controller
         return view('home.projets.sodexam');
     }
 
+    public function projets(){
+        $projets = Project::get();
+        return view('home.projets.sodexam', compact('projets'));
+    }
     /**
      * Store a newly created resource in storage.
      *

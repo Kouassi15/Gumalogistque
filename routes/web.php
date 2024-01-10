@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\LoginsController;
 use App\Http\Controllers\ProjetController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\MaterielController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Dashboard\ProfilController;
 use App\Http\Controllers\Dashboard\ProjectsController;
 use App\Http\Controllers\Dashboard\ServicesController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -34,19 +37,21 @@ Route::get('/', function () {
 // });
 
 Route::get('/accueil',[HomeController::class,'create'])->name('accueil');
-Route::get('/services',[ServiceController::class, 'create'])->name('services');
+// Route::get('/services',[ServiceController::class, 'create'])->name('services');
+Route::get('/services',[ServiceController::class, 'services'])->name('services');
 Route::get('/contact',[ContactController::class, 'create'])->name('contact');
 Route::get('/apropos',[AboutController::class, 'create'])->name('apropos');
 Route::get('/projets',[ProjetController::class, 'index'])->name('projets');
-Route::get('/projets/sodexam',[ProjetController::class, 'create'])->name('projets/sodexam');
-Route::get('/liste/materiel',[MaterielController::class, 'create'])->name('liste/materiel');
+// Route::get('/projets/sodexam',[ProjetController::class, 'create'])->name('projets/sodexam');
+Route::get('/projets/sodexam',[ProjetController::class, 'projets'])->name('projets/sodexam');
+Route::get('/liste/materiel',[MaterielController::class, 'index'])->name('liste/materiel');
 Route::post('/contact/submit',[ContactController::class, 'store'])->name('contact/submit');
 
 // Dashboard
-//  Route::middleware(['auth'])->group(function () {
-//     Route::get('dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
-// });
-Route::get('dashboard/index',[DashboardController::class,'index'])->name('dashboard.index');
+ Route::middleware('auth')->group(function () {
+    Route::get('/dashboard/index', [DashboardController::class, 'index'])->name('dashboard.index');
+});
+// Route::get('dashboard/index',[DashboardController::class,'index'])->name('dashboard.index');
 //services
 Route::get('dashboard/services',[ServicesController::class, 'create'])->name('dashboard.services');
 Route::post('dashboard/nosServices',[ServicesController::class, 'store'])->name('dashboard.nosServices');
@@ -78,7 +83,14 @@ Route::prefix('materiel')->name('materiel.')->group(function () {
     Route::delete('delete',[MaterielsController::class, 'destroy'])->name('delete');
 });
 //
-Route::post('/utilisateur',[LoginController::class,'store'])->name('utilisateur');
+Route::post('/utilisateur',[LoginsController::class,'store'])->name('utilisateur');
 Auth::routes();
-
+//    Route::get('/logout',[LogoutController::class, 'logout'])->name('logout');
+// Route::post('/login',[LoginController::class, 'store'])->name('auth.login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// profil
+Route::prefix('profil')->name('profil.')->group(function () {
+    Route::get('create',[ProfilController::class, 'create'])->name('create');
+    Route::put('update/{id}',[ProfilController::class, 'update'])->name('update');
+    Route::get('edit/{id}',[ProfilController::class, 'edit'])->name('edit');
+});

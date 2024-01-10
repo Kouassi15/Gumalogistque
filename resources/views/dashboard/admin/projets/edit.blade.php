@@ -8,7 +8,7 @@
 		<div class="card-body justify-content-center d-flex">
 			<form method="POST" action="{{ route('dashboard.updateprojects',$projets->id) }}" enctype="multipart/form-data">
                 @csrf
-                @method('PATCH')
+                @method('PUT')
                   
 				<div class="form-group ">
 					<label>Titre</label>

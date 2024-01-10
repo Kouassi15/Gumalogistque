@@ -107,20 +107,19 @@
 				<div class="dropdown">
 					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
 						<span class="user-icon">
-							<img src="{{asset('templatedash/vendors/images/photo1.jpg')}}" alt="">
+							<img src="{{asset('templatedash/vendors/images/admin-2.png')}}" alt="" class="text-primary">
 						</span>
-						<span class="user-name">Ross C. Lopez</span>
+						<span class="user-name">{{Illuminate\Support\Facades\Auth::user()->name}}</span>
 					</a>
+					@auth
 					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
-						<a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
-						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a>
-						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+						<a class="dropdown-item" href="{{ route('profil.edit',Auth::user()->id) }}"><i class="dw dw-user1"></i> Profile</a>
+						<!-- <a class="dropdown-item" href="profile.html"><i class="dw dw-settings2"></i> Setting</a>
+						<a class="dropdown-item" href="faq.html"><i class="dw dw-help"></i> Help</a> -->
+						<a class="dropdown-item" href="{{ route('logout')}}"><i class="dw dw-logout"></i> Log Out</a>
 					</div>
+					@endauth
 				</div>
 			</div>
-			<!-- <div class="github-link">
-				<a href="https://github.com/dropways/deskapp" target="_blank"><img src="{{asset('templatedash/vendors/images/github.svg')}}" alt=""></a>
-			</div> -->
 		</div>
 	</div>

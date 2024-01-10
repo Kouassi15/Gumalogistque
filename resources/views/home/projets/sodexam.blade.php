@@ -23,17 +23,19 @@
     <h1 class="display-5 mb-4">Quelques projets réalisés</h1>
   </div>
   <div class="row mb-4 ">
+  @foreach($projets as $projet)
     <div class="col-md-4 mb-3 ">
       <div class="card h-100 p-3">
         <div class="card-body">
           <a class="project-item" href="#">
-            <img class="img-fluid " src="{{asset('template/assets/img/medical.jpg')}}" style="width: 1000px; height: 196px;" alt="">
+            <img class="img-fluid " src="{{asset('/'.$projet->images_projects)}}" style="width: 1000px; height: 198px;" alt="">
           </a>
-          <p class="card-text">bâtiment du Département des expertises Medicalee du personnel Aéronautique.</p>
+          <p class="card-text">{{$projet->titles}}</p>
         </div>
       </div>
     </div>
-    <div class="col-md-4 mb-3 ">
+    @endforeach
+    <!-- <div class="col-md-4 mb-3 ">
       <div class="card h-100 p-3">
         <div class="card-body">
           <a class="project-item" href="#">
@@ -104,7 +106,7 @@
           <p class="card-text">Réahabilitation des locaux publics de la région de Bouaké .</p>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 

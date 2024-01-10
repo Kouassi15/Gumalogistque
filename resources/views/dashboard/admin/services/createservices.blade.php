@@ -13,6 +13,10 @@
 					<label>Titre</label>
 					<input class="form-control" type="text" name="title" value="{{ old('title') }}" placeholder="Entrer le titre">
 				</div>
+				<div class="form-group ">
+					<label>Description</label>
+					<textarea class="form-control" name="description" ></textarea>
+				</div>
 				<div class="form-group">
 					<label>Selectionner l'image</label>
 					<input type="file" name="images_services" value="{{ old('images_services') }}" class="form-control-file form-control height-auto">

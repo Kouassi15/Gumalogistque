@@ -41,11 +41,13 @@ class ServicesController extends Controller
     {
         $request->validate([
             'title' => 'required',
+            'description' => 'required',
             'images_services' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
         
         $services = new Service();
         $services->title = $request->input('title');
+        $services->description = $request->input('description');
         
         // Uplaoder une image 
         $imageName = $request->file('images_services')->getClientOriginalName();

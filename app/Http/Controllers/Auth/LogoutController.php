@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
 use Illuminate\Http\Request;
-use App\Models\Utilisateur;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
-class LoginController extends Controller
+class LogoutController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,18 @@ class LoginController extends Controller
     {
         //
     }
+    // public function Deconnexion(){
+    //     auth()->logout();
+    //     return redirect()->route('login');
+    // }
+      
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
 
+        return Redirect('login');
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -35,18 +48,7 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            
-            'email' => 'required|max:255',
-        ]);
-
-
-        $utilisateur = new Utilisateur([
-            'email' => $request->get('email'),
-            
-        ]);
-          $utilisateur->save();
-        return back()->with('success', 'Message soumis avec succès!');
+        //
     }
 
     /**

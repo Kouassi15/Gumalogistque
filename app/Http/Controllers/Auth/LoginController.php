@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Auth;
 
+use auth;
+use App\Models\User;
+use Illuminate\Http\Request;
+
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -56,5 +60,11 @@ class LoginController extends Controller
             //response()->json(['error'=>true]);
             //
         }
+
+        
+    }
+    public function delete($id){
+     $user = User::find($id);
+     $user->logout();
     }
 }

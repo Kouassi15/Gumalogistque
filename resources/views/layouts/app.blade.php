@@ -55,7 +55,7 @@
 			</div>
 			<div class="login-menu">
 				<ul>
-					<li><a href="login.html">Login</a></li>
+					<li><a href="{{route('login')}}">Login</a></li>
 				</ul>
 			</div>
 		</div>

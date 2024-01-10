@@ -17,36 +17,38 @@
                         </div>
                     </div>
                 </div>
-</div>
+ </div>
     <!-- end image -->
  <!-- Service Start -->
- <div class="container-xxl py-5">
+<div class="container-xxl py-5">
         <div class="container">
             <div class="text-center mx-auto pb-4 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <p class="fw-medium text-uppercase text-primary mb-2">Nos Services</p>
                 <h1 class="display-5 mb-4">Nous fournissons les meilleurs services dans l'immobilier</h1>
             </div>
-            <div class="row gy-5 gx-4 g-3">
-                <div class="col-md-3 col-lg-4 wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="service-item h-100">
-                        <img class="img-fluid h-100" src="{{asset('template/assets/img/terrain.jpeg')}}" alt="">
+            <div class="row gy-5 gx-4 g-3 ">
+                @foreach($services as $service)
+                <div class="col-md-4 col-lg-3 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item h-100 mb-30">
+                        <img class="img-fluid h-100" src="{{asset('/'.$service->images_services)}}" alt="">
                         <div class="service-img">
-                            <img class="img-fluid h-100" src="{{asset('template/assets/img/terrain.jpeg')}}" alt="">
+                            <img class="img-fluid h-100" src="{{asset('/'.$service->images_services)}}" alt="">
                         </div>
                         <div class="service-detail">
                             <div class="service-title">
                                 <hr class="w-25">
-                                <h3 class="mb-0">Vente de Terrain</h3>
+                                <h3 class="mb-0">{{$service->title}}</h3>
                                 <hr class="w-25">
                             </div>
                             <div class="service-text">
-                                <p class="text-white mb-0">Venez acheter vos terrains en tout securité.</p>
+                                <p class="text-white mb-0">{{$service->description}}</p>
                             </div>
                         </div>
                         <!-- <a class="btn btn-light" href="">Read More</a> -->
                     </div>
                 </div>
-                <div class="col-md-3 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
+                @endforeach
+                <!-- <div class="col-md-3 col-lg-4 wow fadeInUp" data-wow-delay="0.3s">
                     <div class="service-item h-100">
                         <img class="img-fluid h-100" src="{{asset('template/assets/img/lotissement.jpg')}}" alt="">
                         <div class="service-img">
@@ -62,7 +64,7 @@
                                 <p class="text-white mb-0">GUMA LOGISTIQUE est disponible pour tout votre lotissement.</p>
                             </div>
                         </div>
-                        <!-- <a class="btn btn-light" href="">Read More</a> -->
+                        
                     </div>
                 </div><br>
                 <div class="col-md-3 col-lg-4 wow fadeInUp " data-wow-delay="0.5s">
@@ -81,7 +83,7 @@
                                 <p class="text-white mb-0">Pour le décapage ne cherchez plus loin GUMA LOGISTIQUE est à votre disponibilité.</p>
                             </div>
                         </div>
-                        <!-- <a class="btn btn-light" href="">Read More</a> -->
+                        
                     </div>
                 </div>
                 <div class="col-md-3 col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
@@ -100,9 +102,9 @@
                                 <p class="text-white mb-0">Pour la promotion et la construction de votre maison GUMA LOGISTIQUE est là pour vous accompagné.</p>
                             </div>
                         </div>
-                        <!-- <a class="btn btn-light" href="">Read More</a> -->
+                        
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>

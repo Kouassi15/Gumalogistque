@@ -30,14 +30,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Bétonnière de 500 litres</td>
-                    <td>3</td>
-                    <td>
-                    <img src="{{asset('template/assets/img/betonniere.jpg')}}" style="width:60px; height:60px" alt="betonnière" class="img-fluid">
-                    </td>
-                </tr>
-                <tr>
+                @foreach ($materiels as $index => $materiel)
+                   <tr>
+                      <td scope="row">{{$index + 1}}</td>
+                      <td>{{$materiel->nom}}</td>
+                      <td>{{$materiel->qte}}</td>
+                      <td><img src="{{asset('/'.$materiel->images_materiels)}}" width="80px" alt="Service Image"></td>
+                     
+                @endforeach
+                 </tr>
+                <!--<tr>
                     <th scope="row">2</th>
                     <td>Dumper</td>
                     <td>1</td>
@@ -194,7 +196,7 @@
                     <td>
                     <img src="{{asset('template/assets/img/chargeur.jpg')}}" style="width:60px; height:60px" alt="chargeur" class="img-fluid">
                     </td>
-                </tr>
+                </tr> -->
 
             </tbody>
         </table>

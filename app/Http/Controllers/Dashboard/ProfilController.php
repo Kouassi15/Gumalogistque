@@ -1,11 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Materiel;
+use App\Models\User;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
-class MaterielController extends Controller
+class ProfilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,10 +18,9 @@ class MaterielController extends Controller
      */
     public function index()
     {
-        $materiels = Materiel::get();
-        return view('home.projets.listemateriel', compact('materiels'));
+        //
     }
-     
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,7 +28,8 @@ class MaterielController extends Controller
      */
     public function create()
     {
-        return view('home.projets.listemateriel');
+        // dd('ok');
+        return view('dashboard.admin.profil.create');
     }
 
     /**
@@ -58,7 +62,9 @@ class MaterielController extends Controller
      */
     public function edit($id)
     {
-        //
+       
+        $user = User::find($id);
+        return view('dashboard.admin.profil.edit',compact('user'));
     }
 
     /**
@@ -70,7 +76,24 @@ class MaterielController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validator  = Validator::make($request->all(),[
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+   
+         $user = User::find($id);
+        // Mettre à jour les champs nécessaires
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+
+    // Mettre à jour le mot de passe s'il est fourni
+    if ($request->has('password')) {
+        $user->password = Hash::make($request->input('password'));
+    }
+      // Enregistrer les modifications
+      $user->save();
+      return redirect()->route('profil.edit',Auth::user()->id)->with(['success' => 'Mise à jour réussie']);
     }
 
     /**
