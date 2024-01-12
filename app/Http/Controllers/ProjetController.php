@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Equipe;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -16,7 +17,11 @@ class ProjetController extends Controller
     {
         return view('home.projets.index');
     }
-
+      
+    public function equipes(){
+        $equipes = Equipe::get();
+        return view('home.projets.index', compact('equipes'));
+    }
     /**
      * Show the form for creating a new resource.
      *

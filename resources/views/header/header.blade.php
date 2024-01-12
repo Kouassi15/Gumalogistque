@@ -20,7 +20,7 @@
             <div class="col-lg-6 text-end">
                 <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
                     <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Appellez-nous:</span>
-                    <span class="fs-5 fw-bold">+225 27 22 14 52 80</span>
+                    <span class="fs-5 fw-bold">+225 27 22 23 45</span>
                 </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
         <a href="#" class="navbar-brand ps-5 me-0">
-            <h1 class="text-white m-0">GUMA LOGISTIQUE</h1>
+            <h1 class="text-white m-0">GUMA LOGISTIQUE-IMMOBILLIER</h1>
         </a>
         <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>

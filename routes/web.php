@@ -10,11 +10,14 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\MaterielController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Dashboard\EquipeController;
 use App\Http\Controllers\Dashboard\ProfilController;
+use App\Http\Controllers\Dashboard\AproposController;
 use App\Http\Controllers\Dashboard\ProjectsController;
 use App\Http\Controllers\Dashboard\ServicesController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\MaterielsController;
+use App\Http\Controllers\Dashboard\PartenaireController;
 
 
 /*
@@ -41,7 +44,7 @@ Route::get('/accueil',[HomeController::class,'create'])->name('accueil');
 Route::get('/services',[ServiceController::class, 'services'])->name('services');
 Route::get('/contact',[ContactController::class, 'create'])->name('contact');
 Route::get('/apropos',[AboutController::class, 'create'])->name('apropos');
-Route::get('/projets',[ProjetController::class, 'index'])->name('projets');
+Route::get('/projets',[ProjetController::class, 'equipes'])->name('projets');
 // Route::get('/projets/sodexam',[ProjetController::class, 'create'])->name('projets/sodexam');
 Route::get('/projets/sodexam',[ProjetController::class, 'projets'])->name('projets/sodexam');
 Route::get('/liste/materiel',[MaterielController::class, 'index'])->name('liste/materiel');
@@ -82,12 +85,47 @@ Route::prefix('materiel')->name('materiel.')->group(function () {
     Route::get('show/{id}',[MaterielsController::class, 'show'])->name('show');
     Route::delete('delete',[MaterielsController::class, 'destroy'])->name('delete');
 });
+
+// partenaires
+Route::prefix('partenaire')->name('partenaire.')->group(function () {
+    Route::get('index',[PartenaireController::class, 'index'])->name('index');
+    Route::get('create',[PartenaireController::class, 'create'])->name('create');
+    Route::post('store',[PartenaireController::class, 'store'])->name('store');
+    Route::get('show/{id}',[PartenaireController::class, 'show'])->name('show');
+    Route::get('edit/{id}',[PartenaireController::class, 'edit'])->name('edit');
+    Route::put('update/{id}',[PartenaireController::class, 'update'])->name('update');
+    Route::delete('delete/{id}',[PartenaireController::class, 'destroy'])->name('delete');
+});
+
+// apropos
+Route::prefix('apropos')->name('apropos.')->group(function () {
+    Route::get('index',[AproposController::class, 'index'])->name('index');
+    Route::get('create',[AproposController::class, 'create'])->name('create');
+    Route::post('store',[AproposController::class, 'store'])->name('store');
+    Route::get('show',[AproposController::class, 'show'])->name('show');
+    Route::get('edit',[AproposController::class, 'edit'])->name('edit');
+    Route::put('update',[AproposController::class, 'update'])->name('update');
+    Route::delete('delete',[AproposController::class, 'destroy'])->name('delete');
+});
+
+// equipe
+Route::prefix('equipe')->name('equipe.')->group(function () {
+    Route::get('index',[EquipeController::class ,'index'])->name('index');
+    Route::get('create',[EquipeController::class ,'create'])->name('create');
+    Route::post('store',[EquipeController::class ,'store'])->name('store');
+    Route::get('show',[EquipeController::class ,'show'])->name('show');
+    Route::get('edit',[EquipeController::class ,'edit'])->name('edit');
+    Route::put('update',[EquipeController::class ,'update'])->name('update');
+    Route::delete('delete',[EquipeController::class ,'destroy'])->name('delete');
+});
+
 //
 Route::post('/utilisateur',[LoginsController::class,'store'])->name('utilisateur');
 Auth::routes();
-//    Route::get('/logout',[LogoutController::class, 'logout'])->name('logout');
+Route::get('/deconnexion',[LogoutController::class, 'logout'])->name('deconnexion');
 // Route::post('/login',[LoginController::class, 'store'])->name('auth.login');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 // profil
 Route::prefix('profil')->name('profil.')->group(function () {
     Route::get('create',[ProfilController::class, 'create'])->name('create');

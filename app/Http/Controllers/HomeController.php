@@ -30,4 +30,9 @@ class HomeController extends Controller
     {
         return view('home.accueil');
     }
+
+    public function Partenaire(){
+        $partenaires = Partenaire::get();
+        return view('home.accueil', compact('partenaires'));
+    }
 }

@@ -20,7 +20,6 @@
         <div class="col-md-3">
             <div class="d-flex text-center">
                 <img src="{{asset('template/assets/img/BUDGET.png')}}" alt="Logo 3" class="img-fluid logo-images">
-                <!-- <h5 class="mt-2">Ministère du Budget et du Portefeuille de l'Etat</h5> -->
                 <div>
               </div>
             </div>

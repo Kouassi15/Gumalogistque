@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Dashboard;
 
-use App\Models\Equipe;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class AboutController extends Controller
+class AccueilController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-       //
+        //
     }
 
     /**
@@ -24,7 +24,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('home.apropos');
+        //
     }
 
     /**

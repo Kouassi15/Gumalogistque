@@ -121,42 +121,35 @@
 							<li><a href="{{route('materiel.create')}}">Ajouter</a></li>
 							<li><a href="{{ route('materiel.index')}}">Liste des materiels</a></li>
 						</ul>
-					<!-- </li>
+					 </li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-paint-brush"></span><span class="mtext">Icons</span>
+							<span class="micon dw dw-deal"></span><span class="mtext">Partenaire</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="font-awesome.html">FontAwesome Icons</a></li>
-							<li><a href="foundation.html">Foundation Icons</a></li>
-							<li><a href="ionicons.html">Ionicons Icons</a></li>
-							<li><a href="themify.html">Themify Icons</a></li>
-							<li><a href="custom-icon.html">Custom Icons</a></li>
+							<li><a href="{{ route('partenaire.create')}}">Ajouter</a></li>
+							<li><a href="{{ route('partenaire.index')}}">Liste des partenaires</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-analytics-21"></span><span class="mtext">Charts</span>
+							<span class="micon dw dw-user1"></span><span class="mtext">A Propos</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="highchart.html">Highchart</a></li>
-							<li><a href="knob-chart.html">jQuery Knob</a></li>
-							<li><a href="jvectormap.html">jvectormap</a></li>
-							<li><a href="apexcharts.html">Apexcharts</a></li>
+							<li><a href="{{ route('apropos.create')}}">Ajouter</a></li>
+							<li><a href="{{ route('apropos.index')}}">listes</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
+                     <li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-right-arrow1"></span><span class="mtext">Additional Pages</span>
+							<span class="micon dw dw-group"></span><span class="mtext">Equipes</span>
 						</a>
 						<ul class="submenu">
-							<li><a href="video-player.html">Video Player</a></li>
-							<li><a href="login.html">Login</a></li>
-							<li><a href="forgot-password.html">Forgot Password</a></li>
-							<li><a href="reset-password.html">Reset Password</a></li>
+							<li><a href="{{ route('equipe.create')}}">Ajouter</a></li>
+							<li><a href="{{ route('equipe.index')}}">Liste des membre de l'équipe</a></li>
 						</ul>
 					</li>
-					<li class="dropdown">
+					<!--<li class="dropdown">
 						<a href="javascript:;" class="dropdown-toggle">
 							<span class="micon dw dw-browser2"></span><span class="mtext">Error Pages</span>
 						</a>
