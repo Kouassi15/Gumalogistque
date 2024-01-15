@@ -102,10 +102,10 @@ Route::prefix('apropos')->name('apropos.')->group(function () {
     Route::get('index',[AproposController::class, 'index'])->name('index');
     Route::get('create',[AproposController::class, 'create'])->name('create');
     Route::post('store',[AproposController::class, 'store'])->name('store');
-    Route::get('show',[AproposController::class, 'show'])->name('show');
-    Route::get('edit',[AproposController::class, 'edit'])->name('edit');
-    Route::put('update',[AproposController::class, 'update'])->name('update');
-    Route::delete('delete',[AproposController::class, 'destroy'])->name('delete');
+    Route::get('show/{id}',[AproposController::class, 'show'])->name('show');
+    Route::get('edit/{id}',[AproposController::class, 'edit'])->name('edit');
+    Route::put('update/{id}',[AproposController::class, 'update'])->name('update');
+    Route::delete('delete/{id}',[AproposController::class, 'destroy'])->name('delete');
 });
 
 // equipe
@@ -113,10 +113,10 @@ Route::prefix('equipe')->name('equipe.')->group(function () {
     Route::get('index',[EquipeController::class ,'index'])->name('index');
     Route::get('create',[EquipeController::class ,'create'])->name('create');
     Route::post('store',[EquipeController::class ,'store'])->name('store');
-    Route::get('show',[EquipeController::class ,'show'])->name('show');
-    Route::get('edit',[EquipeController::class ,'edit'])->name('edit');
-    Route::put('update',[EquipeController::class ,'update'])->name('update');
-    Route::delete('delete',[EquipeController::class ,'destroy'])->name('delete');
+    Route::get('show/{id}',[EquipeController::class ,'show'])->name('show');
+    Route::get('edit/{id}',[EquipeController::class ,'edit'])->name('edit');
+    Route::put('update/{id}',[EquipeController::class ,'update'])->name('update');
+    Route::delete('delete/{id}',[EquipeController::class ,'destroy'])->name('delete');
 });
 
 //

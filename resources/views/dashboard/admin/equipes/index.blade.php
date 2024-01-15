@@ -70,7 +70,7 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                             <a class="dropdown-item"
-                                                href=""><i
+                                                href="{{ route('equipe.show',$equipe->id)}}"><i
                                                     class="dw dw-eye"></i> View</a>
                                             <a class="dropdown-item"
                                                 href="{{ route('equipe.edit',$equipe->id)}}"><i

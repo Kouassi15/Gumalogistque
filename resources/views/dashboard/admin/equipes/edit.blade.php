@@ -6,7 +6,7 @@
 <div class="container">
 	<div class="pb-20 card-box mb-30 ">
 		<div class="card-body ">
-			<form method="POST" action="{{ route('equipe.update',$equipe->id) }}" enctype="multipart/form-data">
+			<form method="POST" action="{{ route('equipe.update',$equipes->id) }}" enctype="multipart/form-data">
 			      @csrf
                   @method('PUT')
 				  <h2 class="text-primary">Editer un membre</h2><br>
@@ -16,7 +16,7 @@
 				</div>
                 <div class="form-group ">
 					<label>Postes</label>
-					<input class="form-control" type="text" name="poste_membre" value="{{ $equipes->poste_membre) }}" placeholder="Entrer le poste du membre">
+					<input class="form-control" type="text" name="poste_membre" value="{{ $equipes->poste_membre }}" placeholder="Entrer le poste du membre">
 				</div>
                 <div class="form-group ">
 					<label>Diplôme</label>

@@ -85,7 +85,7 @@ class EquipeController extends Controller
     public function show($id)
     {
         $equipes = Equipe::findOrFail($id);
-        return view('dashboard.admin.equipes.show');
+        return view('dashboard.admin.equipes.show',compact('equipes'));
     }
 
     /**
@@ -109,6 +109,7 @@ class EquipeController extends Controller
      */
     public function update(Request $request, $id)
     {
+        // dd('ok');
         $request->validate([
             'nom_membre' => 'required',
             'poste_membre' => 'required',
@@ -119,6 +120,7 @@ class EquipeController extends Controller
             'images1' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
             'images2' => 'required|image|mimes:jpg,png,jpeg,svg|max:2048',
         ]);
+        
     
         $equipes = Equipe::findOrFail($id);
         $equipes->nom_membre = $request->input('nom_membre');

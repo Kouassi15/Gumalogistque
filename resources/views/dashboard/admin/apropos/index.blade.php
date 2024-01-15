@@ -60,7 +60,7 @@
                             <td>{{$propos->activites}}</td>
                             </td>
                             <td>
-                                <form method="POST" action="">
+                                <form method="POST" action="{{ route('apropos.delete',$propos->id) }}">
                                     @csrf
                                     @method('DELETE')
                                     <div class="dropdown">
@@ -70,10 +70,10 @@
                                         </a>
                                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
                                             <a class="dropdown-item"
-                                                href=""><i
+                                                href="{{ route('apropos.show',$propos->id) }}"><i
                                                     class="dw dw-eye"></i> View</a>
                                             <a class="dropdown-item"
-                                                href=""><i
+                                                href="{{ route('apropos.edit',$propos->id) }}"><i
                                                     class="dw dw-edit2"></i> Edit</a>
                                             <button type="submit" class="dropdown-item"><i class="dw dw-delete-3"></i>
                                                 Delete</button>
